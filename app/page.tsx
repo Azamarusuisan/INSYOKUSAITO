@@ -35,7 +35,21 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="mx-auto mt-10 max-w-4xl border-t border-neutral-200 pt-6 text-center">
+        <div className="mx-auto mt-8 max-w-4xl rounded-lg border-2 border-dashed border-neutral-300 bg-white/60 p-5 text-center sm:p-6">
+          <p className="text-[11px] tracking-[0.3em] text-neutral-500 uppercase">For Sales</p>
+          <h3 className="mt-2 font-serif text-lg text-neutral-900">営業提案用 — 業種別デザイン集</h3>
+          <p className="mt-1 text-xs text-neutral-600">
+            イタリアン / 居酒屋 / カフェ / 焼肉 / 寿司 / ラーメン / ヘアサロン / ネイル / ベーカリー の9種類を、ボタン一つで切り替えながらお見せできます。
+          </p>
+          <Link
+            href="/demo"
+            className="mt-4 inline-flex h-10 items-center justify-center rounded bg-neutral-900 px-5 text-sm font-medium text-white hover:bg-neutral-700"
+          >
+            デモ集を開く →
+          </Link>
+        </div>
+
+        <div className="mx-auto mt-8 max-w-4xl border-t border-neutral-200 pt-6 text-center">
           <p className="text-xs text-neutral-500">店舗オーナーの方</p>
           <Link
             href="/admin/login"
