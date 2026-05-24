@@ -12,8 +12,8 @@ export const italianDemo: DemoDefinition = {
   initial: {
     type: "restaurant",
     info: {
-      name: "Trattoria Sole",
-      nameJa: "トラットリア・ソーレ",
+      name: "Shop A",
+      nameJa: "店舗 A",
       tagline: "陽だまりの食卓 — 季節のイタリア料理",
     },
     categories: [

@@ -12,8 +12,8 @@ export const cafeDemo: DemoDefinition = {
   initial: {
     type: "restaurant",
     info: {
-      name: "Cafe Lumière",
-      nameJa: "カフェ ルミエール",
+      name: "Shop S",
+      nameJa: "店舗 S",
       tagline: "光と珈琲の、すこやかな時間",
     },
     categories: [

@@ -12,8 +12,8 @@ export const bakeryDemo: DemoDefinition = {
   initial: {
     type: "restaurant",
     info: {
-      name: "Boulangerie Soleil",
-      nameJa: "ブーランジェリー ソレイユ",
+      name: "Shop V",
+      nameJa: "店舗 V",
       tagline: "毎朝の、ちいさな贅沢",
     },
     categories: [

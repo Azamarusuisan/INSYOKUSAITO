@@ -5,6 +5,13 @@ import type { MenuCategory, MenuItem, ShopData } from "@/lib/types";
 import type { Theme } from "@/lib/themes";
 import { formatPrice } from "@/lib/utils";
 
+// 写真が未設定のアイテムでも、デモID+商品IDをシード値にして
+// 決定論的に同じ写真を返す（営業デモなので見た目重視）
+const fallbackPhoto = (demoId: string, itemId: string, size: "thumb" | "hero" = "thumb") =>
+  size === "hero"
+    ? `https://picsum.photos/seed/${demoId}-${itemId}/1600/900`
+    : `https://picsum.photos/seed/${demoId}-${itemId}/400/400`;
+
 export function MenuView({
   shop,
   theme,
@@ -87,7 +94,12 @@ function Card({
       href={`/demo/${demoId}/item/${item.id}`}
       className={`${theme.cardWrap} group min-h-[88px] cursor-pointer touch-manipulation transition-all hover:opacity-90 active:scale-[0.99] active:opacity-80`}
     >
-      {theme.layout !== "list" && <ImageSlot src={item.imageUrl ?? item.heroImageUrl} ph={theme.cardImagePh} />}
+      {theme.layout !== "list" && (
+        <ImageSlot
+          src={item.imageUrl ?? item.heroImageUrl ?? fallbackPhoto(demoId, item.id, "thumb")}
+          ph={theme.cardImagePh}
+        />
+      )}
       <div className="flex flex-1 flex-col">
         <div className="flex items-start justify-between gap-2 sm:gap-3">
           <div className="min-w-0">

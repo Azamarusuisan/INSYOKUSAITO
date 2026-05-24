@@ -21,7 +21,7 @@ export const teishokuDemo: DemoDefinition = {
   shortDescription: "木目の温かみ。家庭料理を、丁寧に。",
   initial: {
     type: "restaurant",
-    info: { name: "Teishoku Tomoshibi", nameJa: "ともしび定食店", tagline: "炊きたて、出来たてを、毎日。" },
+    info: { name: "Shop E", nameJa: "店舗 E", tagline: "炊きたて、出来たてを、毎日。" },
     categories: cats([
       { id: "today", name: "本日の定食", subName: "Today", items: items([
         { id: "saba", name: "鯖の塩焼き定食", price: 1100, description: "国産鯖、五穀米、味噌汁、小鉢二品。", badge: "看板", heroImageUrl: hero("teishoku-saba"),
@@ -53,7 +53,7 @@ export const wagashiDemo: DemoDefinition = {
   shortDescription: "白×渋金。お品書きのような縦長レイアウト。",
   initial: {
     type: "restaurant",
-    info: { name: "Wagashi Kogetsu", nameJa: "和菓子 鼓月", tagline: "季のうつろいを、お菓子に映して。" },
+    info: { name: "Shop W", nameJa: "店舗 W", tagline: "季のうつろいを、お菓子に映して。" },
     categories: cats([
       { id: "namagashi", name: "生菓子", subName: "Namagashi", items: items([
         { id: "sakuramochi", name: "桜餅", price: 380, badge: "春限定", heroImageUrl: hero("wagashi-sakura"),
@@ -83,7 +83,7 @@ export const sobaDemo: DemoDefinition = {
   shortDescription: "生成り×墨。素朴で凛とした手打ち蕎麦店。",
   initial: {
     type: "restaurant",
-    info: { name: "Soba Kuretake", nameJa: "手打蕎麦 呉竹", tagline: "石臼挽き、十割。" },
+    info: { name: "Shop F", nameJa: "店舗 F", tagline: "石臼挽き、十割。" },
     categories: cats([
       { id: "tsumetai", name: "冷たい蕎麦", subName: "Cold", items: items([
         { id: "seiro", name: "せいろ", price: 1100, badge: "看板", heroImageUrl: hero("soba-seiro"),
@@ -115,7 +115,7 @@ export const kaisekiDemo: DemoDefinition = {
   shortDescription: "深緑×金。京の懐石を、最上格の佇まいで。",
   initial: {
     type: "restaurant",
-    info: { name: "Kaiseki Tsukinoha", nameJa: "懐石 月の葉", tagline: "一期一会の、八寸を。" },
+    info: { name: "Shop J", nameJa: "店舗 J", tagline: "一期一会の、八寸を。" },
     categories: cats([
       { id: "course", name: "お献立", subName: "Course", items: items([
         { id: "tsuki", name: "おまかせ「月」", subName: "全九品", price: 16500, badge: "顔", heroImageUrl: hero("kaiseki-tsuki"),
@@ -141,7 +141,7 @@ export const teppanyakiDemo: DemoDefinition = {
   shortDescription: "鉄板の質感。赤と黒の劇場のように。",
   initial: {
     type: "restaurant",
-    info: { name: "Teppan Akane", nameJa: "鉄板焼 あかね", tagline: "目の前の、ライブを。" },
+    info: { name: "Shop L", nameJa: "店舗 L", tagline: "目の前の、ライブを。" },
     categories: cats([
       { id: "steak", name: "ステーキ", subName: "Steak", items: items([
         { id: "chateau", name: "シャトーブリアン 100g", price: 12100, badge: "A5", heroImageUrl: hero("teppan-chateau"),
@@ -170,7 +170,7 @@ export const frenchDemo: DemoDefinition = {
   shortDescription: "深い紺×金。クラシックなビストロ。",
   initial: {
     type: "restaurant",
-    info: { name: "Bistro Bleu Nuit", nameJa: "ビストロ・ブルニュイ", tagline: "夜のパリへ、ひとっとび。" },
+    info: { name: "Shop M", nameJa: "店舗 M", tagline: "夜のパリへ、ひとっとび。" },
     categories: cats([
       { id: "entree", name: "前菜", subName: "Entrée", items: items([
         { id: "terrine", name: "田舎風テリーヌ", subName: "Terrine de Campagne", price: 1480, badge: "定番", heroImageUrl: hero("french-terrine"),
@@ -200,7 +200,7 @@ export const chineseDemo: DemoDefinition = {
   shortDescription: "朱×金。本格中華の華やかさを前面に。",
   initial: {
     type: "restaurant",
-    info: { name: "Chinese Kohaku", nameJa: "中華料理 琥珀", tagline: "火力と香り、本場の本気。" },
+    info: { name: "Shop N", nameJa: "店舗 N", tagline: "火力と香り、本場の本気。" },
     categories: cats([
       { id: "appetizer", name: "前菜", subName: "Appetizer", items: items([
         { id: "yodofu", name: "クラゲと胡瓜の冷菜", price: 880, badge: "定番" },
@@ -231,7 +231,7 @@ export const taishuDemo: DemoDefinition = {
   shortDescription: "昭和の酒場のような、太字と派手な価格表示。",
   initial: {
     type: "restaurant",
-    info: { name: "Sakaba Daikichi", nameJa: "酒場 大吉", tagline: "ちょっと一杯、しっかり一杯。" },
+    info: { name: "Shop I", nameJa: "店舗 I", tagline: "ちょっと一杯、しっかり一杯。" },
     categories: cats([
       { id: "drink", name: "ドリンク", subName: "Drink", items: items([
         { id: "nama", name: "生ビール 中ジョッキ", price: 480, badge: "定番" },
@@ -263,7 +263,7 @@ export const okonomiyakiDemo: DemoDefinition = {
   shortDescription: "黒太罫×黄。関西ノリのライブ感。",
   initial: {
     type: "restaurant",
-    info: { name: "Okonomi Botechin", nameJa: "お好み焼 ぼてちん", tagline: "焼くから旨い、その瞬間を。" },
+    info: { name: "Shop H", nameJa: "店舗 H", tagline: "焼くから旨い、その瞬間を。" },
     categories: cats([
       { id: "okonomi", name: "お好み焼き", subName: "Okonomiyaki", items: items([
         { id: "buta", name: "豚玉", price: 980, badge: "定番" },
@@ -293,7 +293,7 @@ export const udonDemo: DemoDefinition = {
   shortDescription: "藍×白。讃岐うどんを潔く。",
   initial: {
     type: "restaurant",
-    info: { name: "Udon Naruto", nameJa: "讃岐うどん 鳴門", tagline: "粉から、出汁から。" },
+    info: { name: "Shop G", nameJa: "店舗 G", tagline: "粉から、出汁から。" },
     categories: cats([
       { id: "udon", name: "うどん", subName: "Udon", items: items([
         { id: "kake", name: "かけ", price: 380, badge: "看板", heroImageUrl: hero("udon-kake"),
@@ -324,7 +324,7 @@ export const wineBarDemo: DemoDefinition = {
   shortDescription: "ボルドー×ベルベット。夜更けの一杯のために。",
   initial: {
     type: "restaurant",
-    info: { name: "Wine Bar Voile", nameJa: "ワインバー ヴォワル", tagline: "杯を、ゆっくりと。" },
+    info: { name: "Shop P", nameJa: "店舗 P", tagline: "杯を、ゆっくりと。" },
     categories: cats([
       { id: "wine-red", name: "赤ワイン（グラス）", subName: "Vin Rouge", items: items([
         { id: "bordeaux", name: "ボルドー シャトー・ラリヴェ", subName: "France", price: 1480, badge: "本日", heroImageUrl: hero("wine-red"),
@@ -355,7 +355,7 @@ export const craftBeerDemo: DemoDefinition = {
   shortDescription: "ホップ茶×黒×ゴールド。インダストリアルな酒場。",
   initial: {
     type: "restaurant",
-    info: { name: "Tap Room HOP", nameJa: "タップルーム ホップ", tagline: "今日の樽、12タップ。" },
+    info: { name: "Shop Q", nameJa: "店舗 Q", tagline: "今日の樽、12タップ。" },
     categories: cats([
       { id: "tap", name: "オンタップ", subName: "On Tap", items: items([
         { id: "ipa", name: "ヘイジーIPA", subName: "うちゅうブルーイング", price: 1080, badge: "看板", heroImageUrl: hero("craft-ipa"),
@@ -382,7 +382,7 @@ export const cocktailBarDemo: DemoDefinition = {
   shortDescription: "深紫×金。一杯ごとに物語のあるオーセンティック。",
   initial: {
     type: "restaurant",
-    info: { name: "Bar Lune", nameJa: "バー ルーヌ", tagline: "今宵の一杯、お選びください。" },
+    info: { name: "Shop R", nameJa: "店舗 R", tagline: "今宵の一杯、お選びください。" },
     categories: cats([
       { id: "signature", name: "シグネチャー", subName: "Signature", items: items([
         { id: "lune", name: "ルーヌ", subName: "Gin / Yuzu / Tonic", price: 1680, badge: "看板", heroImageUrl: hero("cocktail-lune"),
@@ -412,7 +412,7 @@ export const patisserieDemo: DemoDefinition = {
   shortDescription: "ピンクゴールド×アイボリー。宝石のようなケーキ。",
   initial: {
     type: "restaurant",
-    info: { name: "Pâtisserie Étoile", nameJa: "パティスリー エトワール", tagline: "毎日が、ちいさなお祝い。" },
+    info: { name: "Shop X", nameJa: "店舗 X", tagline: "毎日が、ちいさなお祝い。" },
     categories: cats([
       { id: "cake", name: "ケーキ", subName: "Gâteaux", items: items([
         { id: "fraisier", name: "フレジエ", subName: "苺のショートケーキ", price: 680, badge: "人気", heroImageUrl: hero("patisserie-fraisier"),
@@ -443,7 +443,7 @@ export const gelatoDemo: DemoDefinition = {
   shortDescription: "パステルポップ。カラフルで楽しげに。",
   initial: {
     type: "restaurant",
-    info: { name: "Gelateria Sora", nameJa: "ジェラテリア そら", tagline: "今日のフレーバー、何にする？" },
+    info: { name: "Shop Y", nameJa: "店舗 Y", tagline: "今日のフレーバー、何にする？" },
     categories: cats([
       { id: "cat-milk", name: "ミルク系", subName: "Milk", items: items([
         { id: "milk-hokkaido", name: "北海道ミルク", price: 480, badge: "定番", heroImageUrl: hero("gelato-milk"),
@@ -474,7 +474,7 @@ export const burgerDemo: DemoDefinition = {
   shortDescription: "赤×白×太枠。レトロアメリカン。",
   initial: {
     type: "restaurant",
-    info: { name: "Burger Joint MAVERICK", nameJa: "バーガージョイント マーヴェリック", tagline: "JUICY. ALWAYS." },
+    info: { name: "Shop O", nameJa: "店舗 O", tagline: "JUICY. ALWAYS." },
     categories: cats([
       { id: "burger", name: "BURGERS", subName: "Burgers", items: items([
         { id: "classic", name: "クラシック チーズバーガー", price: 1380, badge: "看板", heroImageUrl: hero("burger-classic"),
@@ -505,7 +505,7 @@ export const modernCafeDemo: DemoDefinition = {
   shortDescription: "白×黒×サンセリフ。北欧ミニマルな佇まい。",
   initial: {
     type: "restaurant",
-    info: { name: "FORM coffee", nameJa: "フォーム コーヒー", tagline: "Less, but better." },
+    info: { name: "Shop T", nameJa: "店舗 T", tagline: "Less, but better." },
     categories: cats([
       { id: "coffee", name: "COFFEE", subName: "Espresso & Filter", items: items([
         { id: "espresso", name: "ESPRESSO", price: 380 },
@@ -536,7 +536,7 @@ export const teahouseDemo: DemoDefinition = {
   shortDescription: "抹茶緑×竹。心落ち着く和の喫茶。",
   initial: {
     type: "restaurant",
-    info: { name: "Teahouse Sasanoha", nameJa: "茶房 笹の葉", tagline: "一服の、間を。" },
+    info: { name: "Shop U", nameJa: "店舗 U", tagline: "一服の、間を。" },
     categories: cats([
       { id: "matcha", name: "抹茶", subName: "Matcha", items: items([
         { id: "usucha", name: "薄茶 上生菓子付き", price: 1280, badge: "看板", heroImageUrl: hero("teahouse-usucha"),
@@ -567,7 +567,7 @@ export const eyelashDemo: DemoDefinition = {
   shortDescription: "黒×ローズゴールド。ラグジュアリーで繊細に。",
   initial: {
     type: "salon",
-    info: { name: "Eyelash Salon NOIR", nameJa: "アイラッシュサロン ノアール", tagline: "目もとから、明日を。" },
+    info: { name: "Salon AB", nameJa: "サロン AB", tagline: "目もとから、明日を。" },
     categories: cats([
       { id: "extension", name: "エクステンション", subName: "Extension", items: items([
         { id: "single80", name: "シングルラッシュ 80本", subName: "Single 80", price: 5500, badge: "ベーシック" },
@@ -597,7 +597,7 @@ export const barberDemo: DemoDefinition = {
   shortDescription: "赤白青ストライプ。ヴィンテージなメンズグルーミング。",
   initial: {
     type: "salon",
-    info: { name: "BARBER & CO.", nameJa: "バーバー アンド カンパニー", tagline: "GENTLEMAN'S GROOMING. SINCE 2014." },
+    info: { name: "Salon AC", nameJa: "サロン AC", tagline: "GENTLEMAN'S GROOMING. SINCE 2014." },
     categories: cats([
       { id: "cut", name: "CUT", subName: "Cut", items: items([
         { id: "haircut", name: "ヘアカット", subName: "Haircut", price: 4400, badge: "BASIC" },

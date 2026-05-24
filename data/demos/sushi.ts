@@ -12,8 +12,8 @@ export const sushiDemo: DemoDefinition = {
   initial: {
     type: "restaurant",
     info: {
-      name: "Sushi Mizuki",
-      nameJa: "鮨 みづき",
+      name: "Shop B",
+      nameJa: "店舗 B",
       tagline: "旬の魚と、握りたての一貫を",
     },
     categories: [

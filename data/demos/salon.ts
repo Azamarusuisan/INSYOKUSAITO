@@ -12,8 +12,8 @@ export const salonDemo: DemoDefinition = {
   initial: {
     type: "salon",
     info: {
-      name: "Maison Lumière",
-      nameJa: "メゾン・ルミエール",
+      name: "Salon Z",
+      nameJa: "サロン Z",
       tagline: "あなたらしさを、丁寧に。",
     },
     categories: [

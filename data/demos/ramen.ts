@@ -12,8 +12,8 @@ export const ramenDemo: DemoDefinition = {
   initial: {
     type: "restaurant",
     info: {
-      name: "Menya Hibari",
-      nameJa: "麺屋 ひばり",
+      name: "Shop D",
+      nameJa: "店舗 D",
       tagline: "煮干と鶏白湯、毎日炊きたて",
     },
     categories: [

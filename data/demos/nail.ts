@@ -12,8 +12,8 @@ export const nailDemo: DemoDefinition = {
   initial: {
     type: "salon",
     info: {
-      name: "Nail Atelier Fleur",
-      nameJa: "ネイルアトリエ フルール",
+      name: "Salon AA",
+      nameJa: "サロン AA",
       tagline: "指先から、特別な一日を",
     },
     categories: [

@@ -44,7 +44,10 @@ export default function ItemDetailPage({
   if (!foundItem) notFound();
   const item = foundItem;
 
-  const hero = item.heroImageUrl ?? item.imageUrl;
+  const hero =
+    item.heroImageUrl ??
+    item.imageUrl ??
+    `https://picsum.photos/seed/${id}-${item.id}/1600/900`;
   const gallery = item.gallery ?? [];
   const paragraphs = (item.story ?? "").split(/\n\s*\n/).filter(Boolean);
   const hasBg = !!theme.bgImage;

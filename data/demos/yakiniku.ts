@@ -12,8 +12,8 @@ export const yakinikuDemo: DemoDefinition = {
   initial: {
     type: "restaurant",
     info: {
-      name: "Yakiniku Kogane",
-      nameJa: "焼肉 黄金",
+      name: "Shop K",
+      nameJa: "店舗 K",
       tagline: "厳選A5、炭火で味わう極上の一皿",
     },
     categories: [

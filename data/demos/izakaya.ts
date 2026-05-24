@@ -12,8 +12,8 @@ export const izakayaDemo: DemoDefinition = {
   initial: {
     type: "restaurant",
     info: {
-      name: "Izakaya Kuroshio",
-      nameJa: "居酒屋 黒潮",
+      name: "Shop C",
+      nameJa: "店舗 C",
       tagline: "今宵の肴、今宵の酒",
     },
     categories: [
