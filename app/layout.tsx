@@ -43,7 +43,7 @@ export default function RootLayout({
       lang="ja"
       className={`${notoSans.variable} ${notoSerif.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <Providers>{children}</Providers>
       </body>
     </html>
