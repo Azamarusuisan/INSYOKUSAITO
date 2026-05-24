@@ -48,7 +48,9 @@ export const izakayaDemo: DemoDefinition = {
         subName: "Sashimi",
         isPublished: true,
         items: pub([
-          { id: "moriawase", name: "本日のお造り盛り合わせ", subName: "5種", price: 2480, badge: "おすすめ" },
+          { id: "moriawase", name: "本日のお造り盛り合わせ", subName: "5種", price: 2480, badge: "おすすめ",
+            heroImageUrl: "https://picsum.photos/seed/izakaya-sashimi/1600/900",
+            story: "豊洲市場で大将自ら目利きした、その日一番の魚を5種盛り合わせます。\n\n何が入るかは、お楽しみ。季節と漁の状況によって毎日変わります。" },
           { id: "katsuo", name: "戻り鰹の藁焼き", price: 1480 },
           { id: "maguro", name: "本鮪 中とろ", price: 1880 },
         ]),

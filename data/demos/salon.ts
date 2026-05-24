@@ -37,7 +37,14 @@ export const salonDemo: DemoDefinition = {
           { id: "color-full", name: "フルカラー", subName: "Full Color", price: 8800 },
           { id: "color-retouch", name: "リタッチカラー", subName: "Retouch", price: 6600 },
           { id: "color-highlight", name: "ハイライト", subName: "Highlights", price: 12100, badge: "人気" },
-          { id: "color-balayage", name: "バレイヤージュ", subName: "Balayage", price: 16500, badge: "おすすめ" },
+          { id: "color-balayage", name: "バレイヤージュ", subName: "Balayage", price: 16500, badge: "おすすめ",
+            heroImageUrl: "https://picsum.photos/seed/salon-balayage/1600/900",
+            story: "フランス語で「箒で掃く」を意味するカラーリング技法。\n\nアルミホイルを使わず、手描きで自然なグラデーションを描きます。仕上がりは伸びてきても境目が気にならず、3〜4ヶ月美しさが続きます。",
+            storyPoints: [
+              { title: "手描きの技術", body: "ホイルを使わず、髪一筋ずつ色をのせる繊細な技法。" },
+              { title: "境目の自然さ", body: "根本が伸びても目立たないので、メンテナンス頻度が抑えられます。" },
+              { title: "髪への優しさ", body: "毛先のみに薬剤をのせるため、ダメージを最小限に。" },
+            ] },
         ]),
       },
       {

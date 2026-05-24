@@ -39,7 +39,7 @@ export default function HomePage() {
           <p className="text-[11px] tracking-[0.3em] text-neutral-500 uppercase">For Sales</p>
           <h3 className="mt-2 font-serif text-lg text-neutral-900">営業提案用 — 業種別デザイン集</h3>
           <p className="mt-1 text-xs text-neutral-600">
-            イタリアン / 居酒屋 / カフェ / 焼肉 / 寿司 / ラーメン / ヘアサロン / ネイル / ベーカリー の9種類を、ボタン一つで切り替えながらお見せできます。
+            和食 / 洋食 / 中華 / バー / カフェ / スイーツ / 美容 など、29種類のデザインを業種別に用意。ボタン一つで切り替えながらお見せできます。
           </p>
           <Link
             href="/demo"

@@ -23,7 +23,9 @@ export const ramenDemo: DemoDefinition = {
         subName: "Ramen",
         isPublished: true,
         items: pub([
-          { id: "tori-paitan", name: "鶏白湯 醤油", price: 950, description: "国産丸鶏8時間炊き、低温調理チャーシュー2枚。", badge: "看板" },
+          { id: "tori-paitan", name: "鶏白湯 醤油", price: 950, description: "国産丸鶏8時間炊き、低温調理チャーシュー2枚。", badge: "看板",
+            heroImageUrl: "https://picsum.photos/seed/ramen-toripaitan/1600/900",
+            story: "国産の丸鶏を、骨ごと8時間炊き込みます。\n途中で何度も灰汁を取り、最後にミキサーにかけて、白濁したクリーミーなスープに。\n\n醤油ダレは三種の醤油をブレンド。低温調理のチャーシューは、噛んだ瞬間に肉の繊維が解けます。" },
           { id: "niboshi", name: "煮干し中華そば", price: 880, badge: "人気" },
           { id: "shoyu", name: "あっさり醤油そば", price: 850 },
           { id: "tantan", name: "汁なし担々麺", price: 980 },

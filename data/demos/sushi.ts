@@ -23,7 +23,9 @@ export const sushiDemo: DemoDefinition = {
         subName: "Omakase",
         isPublished: true,
         items: pub([
-          { id: "mizuki", name: "おまかせ みづき", subName: "握り12貫・椀物・玉子", price: 8800, badge: "おすすめ" },
+          { id: "mizuki", name: "おまかせ みづき", subName: "握り12貫・椀物・玉子", price: 8800, badge: "おすすめ",
+            heroImageUrl: "https://picsum.photos/seed/sushi-omakase/1600/900",
+            story: "豊洲市場でその日に揚がった旬の魚を中心に、大将がその場で握り上げます。\n\n白身から始まり、光物、貝、最後に大とろ。一貫一貫、温度・酢加減・醤油の量まで調整した、お客様だけのお寿司です。" },
           { id: "tsuki", name: "おまかせ 月", subName: "握り10貫・椀物", price: 5500 },
           { id: "yuki", name: "おまかせ 雪", subName: "握り8貫", price: 3850 },
         ]),

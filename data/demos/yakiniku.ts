@@ -33,7 +33,14 @@ export const yakinikuDemo: DemoDefinition = {
         subName: "Tongue",
         isPublished: true,
         items: pub([
-          { id: "tokujo-tan", name: "特上厚切りタン", price: 2480, badge: "おすすめ" },
+          { id: "tokujo-tan", name: "特上厚切りタン", price: 2480, badge: "おすすめ",
+            heroImageUrl: "https://picsum.photos/seed/yakiniku-tan/1600/900",
+            story: "牛タンの中でも、芯に近い柔らかな部位だけを贅沢に厚切り。\n\n表面に格子状の切り込みを入れ、塩のみで一気に高温で焼き上げます。レモンを軽く絞って、ひと口で。",
+            storyPoints: [
+              { title: "厚さ8mm", body: "噛むほどに溢れる肉汁を、最大限に楽しめる厚さ。" },
+              { title: "粗塩のみ", body: "余計な味付けはせず、タンそのものの旨味を引き立てます。" },
+              { title: "強火炭火", body: "備長炭の遠赤外線で、表面はカリッ、中はジューシーに。" },
+            ] },
           { id: "tan-shio", name: "上タン塩", price: 1880 },
           { id: "negi-tan", name: "ねぎ塩タン", price: 1980 },
         ]),

@@ -23,7 +23,9 @@ export const cafeDemo: DemoDefinition = {
         subName: "Coffee",
         isPublished: true,
         items: pub([
-          { id: "drip", name: "本日のドリップ", subName: "Hand Drip", price: 580, description: "シングルオリジンを浅煎りで。", badge: "おすすめ" },
+          { id: "drip", name: "本日のドリップ", subName: "Hand Drip", price: 580, description: "シングルオリジンを浅煎りで。", badge: "おすすめ",
+            heroImageUrl: "https://picsum.photos/seed/cafe-drip/1600/900",
+            story: "本日の豆はエチオピア・イルガチェフェ。シトラスの華やかな酸味と、紅茶を思わせる軽やかさが特徴です。\n\n専属ロースターが週ごとに焙煎しています。豆の状態をベストに保つため、提供開始から2週間で次の豆へ切り替えます。" },
           { id: "latte", name: "カフェラテ", subName: "Cafe Latte", price: 620 },
           { id: "cappuccino", name: "カプチーノ", subName: "Cappuccino", price: 620 },
           { id: "espresso", name: "エスプレッソ", subName: "Espresso", price: 480 },

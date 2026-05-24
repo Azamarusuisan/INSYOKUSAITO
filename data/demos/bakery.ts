@@ -45,7 +45,14 @@ export const bakeryDemo: DemoDefinition = {
         subName: "Viennoiserie",
         isPublished: true,
         items: pub([
-          { id: "croissant", name: "クロワッサン", subName: "Croissant", price: 320, badge: "看板" },
+          { id: "croissant", name: "クロワッサン", subName: "Croissant", price: 320, badge: "看板",
+            heroImageUrl: "https://picsum.photos/seed/bakery-croissant/1600/900",
+            story: "フランス産の発酵バター「イズニー」をたっぷり折り込んだ、贅沢なクロワッサン。\n\n生地は3日間かけて低温で発酵させ、薄い層を何枚も重ねます。焼き上がりはサクッと崩れて、内側はバターの香りでしっとり。",
+            storyPoints: [
+              { title: "イズニーバター", body: "ノルマンディー原産の発酵バターを贅沢に使用。" },
+              { title: "3日間の発酵", body: "低温長時間発酵で、深い旨味を引き出します。" },
+              { title: "27層の生地", body: "手作業で折り込み、サクサクの食感を実現。" },
+            ] },
           { id: "pain-choco", name: "パン オ ショコラ", price: 360 },
           { id: "kouign", name: "クイニーアマン", price: 380 },
         ]),
