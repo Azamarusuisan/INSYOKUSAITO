@@ -11,6 +11,7 @@ import { cx } from "@/lib/utils";
 const NAV = [
   { href: "", label: "ダッシュボード", match: "exact" as const },
   { href: "/menu", label: "メニュー", match: "prefix" as const },
+  { href: "/qr", label: "QR表示", match: "prefix" as const },
   { href: "/settings", label: "店舗情報", match: "prefix" as const },
   { href: "/data", label: "データ管理", match: "prefix" as const },
 ];

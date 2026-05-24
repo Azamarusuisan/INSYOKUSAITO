@@ -30,7 +30,8 @@ export type ThemeId =
   | "modern-cafe"
   | "teahouse"
   | "eyelash"
-  | "barber";
+  | "barber"
+  | "family";
 
 export type LayoutVariant = "card" | "list" | "grid-tight" | "rail";
 
@@ -755,6 +756,29 @@ export const THEMES: Record<ThemeId, Theme> = {
     footerNote: "text-stone-500",
     fontFamily: "font-sans",
     layout: "list",
+  },
+  family: {
+    id: "family",
+    pageBg: "bg-[#fffaf2]",
+    pageText: "text-stone-900",
+    headerBg: "bg-[#fffaf2]",
+    headerText: "text-red-700",
+    headerAccent: "text-orange-600",
+    catHeading: "text-2xl font-bold text-stone-900 sm:text-3xl",
+    catSub: "text-[11px] font-bold tracking-[0.3em] text-orange-600 uppercase",
+    catRule: "border-orange-300",
+    cardWrap: "flex gap-3 rounded-md border border-orange-200 bg-white p-3 sm:gap-4 sm:p-4",
+    cardName: "text-sm font-semibold text-stone-900 sm:text-base",
+    cardSub: "text-[10px] tracking-wider text-orange-600 sm:text-[11px]",
+    cardDesc: "text-[11px] leading-relaxed text-stone-600 sm:text-xs",
+    cardPrice: "text-sm font-bold tabular-nums text-red-700 sm:text-base",
+    cardBadge: "rounded-sm bg-red-600 px-2 py-0.5 text-[10px] font-bold tracking-wider text-white",
+    cardImagePh: "bg-orange-50 text-[10px] tracking-[0.2em] text-orange-300",
+    sectionGap: "space-y-8 sm:space-y-10",
+    grid: "grid gap-2 sm:grid-cols-2 sm:gap-3",
+    footerNote: "text-stone-500",
+    fontFamily: "font-sans",
+    layout: "card",
   },
   bakery: {
     id: "bakery",

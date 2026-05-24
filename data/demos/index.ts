@@ -29,6 +29,7 @@ import {
   teahouseDemo,
   eyelashDemo,
   barberDemo,
+  familyDemo,
 } from "./more";
 
 export const DEMOS: DemoDefinition[] = [
@@ -50,6 +51,7 @@ export const DEMOS: DemoDefinition[] = [
   frenchDemo,
   chineseDemo,
   burgerDemo,
+  familyDemo, // 大規模メニュー（80品超）
   // バー系
   wineBarDemo,
   craftBeerDemo,

@@ -14,7 +14,7 @@ const GROUPS: Array<{ label: string; sub: string; ids: string[] }> = [
   {
     label: "焼物・洋食・中華",
     sub: "Grill / Western / Chinese",
-    ids: ["yakiniku", "teppanyaki", "french", "chinese", "burger"],
+    ids: ["yakiniku", "teppanyaki", "french", "chinese", "burger", "family"],
   },
   {
     label: "バー",
