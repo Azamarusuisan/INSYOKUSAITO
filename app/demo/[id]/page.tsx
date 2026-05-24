@@ -7,6 +7,8 @@ import { getDemo } from "@/data/demos";
 import { THEMES } from "@/lib/themes";
 import { MenuView } from "@/components/customer/MenuView";
 import { DemoSwitcher } from "@/components/customer/DemoSwitcher";
+import { ActionBar } from "@/components/customer/ActionBar";
+import { defaultActions } from "@/lib/default-actions";
 
 export default function DemoDetailPage({
   params,
@@ -74,9 +76,14 @@ export default function DemoDetailPage({
         <MenuView shop={shop} theme={theme} demoId={id} />
       </main>
 
-      <footer className={`border-t border-white/15 px-4 py-5 text-center text-[10px] tracking-[0.2em] uppercase safe-x safe-bottom sm:text-[11px] ${theme.footerNote}`}>
+      <footer className={`border-t border-white/15 px-4 pb-24 pt-5 text-center text-[10px] tracking-[0.2em] uppercase safe-x sm:pb-5 sm:text-[11px] ${theme.footerNote}`}>
         {shop.info.name}
       </footer>
+
+      <ActionBar
+        actions={shop.actions && shop.actions.length > 0 ? shop.actions : defaultActions(def.industry)}
+        theme={theme}
+      />
     </div>
   );
 }

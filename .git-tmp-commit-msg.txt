@@ -1,0 +1,29 @@
+feat: sticky category nav, tag filter chips, bottom CTA bar
+
+Research-driven mobile menu UX additions (best-practice patterns from
+2026 restaurant UX writeups):
+
+1. Sticky category navigation bar — horizontal scroll tabs that stay
+   pinned below the demo switcher while scrolling. Tap to smooth-jump
+   to that section; active section auto-highlighted via
+   IntersectionObserver. Visible across all 29 demos.
+
+2. Tag filter chips — horizontal chip row for #人気 / #ベジタリアン /
+   #肉 / #魚介 etc. Tapping a chip filters menu items in place; empty
+   categories collapse. Tags derived from item.tags (new optional
+   field), or explicitly listed via ShopData.filterTags.
+
+3. Bottom fixed CTA bar — primary action (予約 / 電話 / 地図 / LINE
+   / Instagram) pinned to bottom of every demo. Industry-aware
+   defaults via lib/default-actions.ts so all demos light up even
+   without shop-specific config. Phone entries dial tel: directly.
+
+Sample tags populated on italian demo items (人気 / ベジタリアン / 肉
+/ 魚介 / おすすめ / 定番 / チーズ) so the filter is demonstrable
+immediately. Other demos pick up tags later as customers configure.
+
+Type additions:
+- MenuItem.tags?: string[]
+- ShopData.actions?: ShopAction[]
+- ShopData.filterTags?: string[]
+- ShopAction with type/value/label
