@@ -13,7 +13,15 @@ export type ItemFormValues = {
   imageUrl: string;
   badge: string;
   isPublished: boolean;
+  heroImageUrl: string;
+  galleryText: string; // 1行1URL
+  videoUrl: string;
+  story: string;
+  storyPointsText: string; // "タイトル | 本文" を1行1点
+  linksText: string; // "種類:URL[ | ラベル]" を1行1リンク
 };
+
+const LINK_TYPES = ["instagram", "note", "x", "youtube", "tiktok", "facebook", "web"] as const;
 
 type Props = {
   open: boolean;
@@ -32,6 +40,12 @@ const empty: ItemFormValues = {
   imageUrl: "",
   badge: "",
   isPublished: true,
+  heroImageUrl: "",
+  galleryText: "",
+  videoUrl: "",
+  story: "",
+  storyPointsText: "",
+  linksText: "",
 };
 
 export function ItemFormModal({
@@ -56,6 +70,16 @@ export function ItemFormModal({
         imageUrl: initial.imageUrl ?? "",
         badge: initial.badge ?? "",
         isPublished: initial.isPublished,
+        heroImageUrl: initial.heroImageUrl ?? "",
+        galleryText: (initial.gallery ?? []).join("\n"),
+        videoUrl: initial.videoUrl ?? "",
+        story: initial.story ?? "",
+        storyPointsText: (initial.storyPoints ?? [])
+          .map((p) => `${p.title} | ${p.body}`)
+          .join("\n"),
+        linksText: (initial.links ?? [])
+          .map((l) => `${l.type}: ${l.url}${l.label ? ` | ${l.label}` : ""}`)
+          .join("\n"),
       });
     } else {
       setValues(empty);
@@ -79,6 +103,37 @@ export function ItemFormModal({
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
 
+    const gallery = values.galleryText
+      .split(/\n+/)
+      .map((s) => s.trim())
+      .filter((s) => /^https?:\/\//.test(s));
+
+    const storyPoints = values.storyPointsText
+      .split(/\n+/)
+      .map((line) => line.trim())
+      .filter(Boolean)
+      .map((line) => {
+        const [title, ...rest] = line.split("|");
+        return { title: (title ?? "").trim(), body: rest.join("|").trim() };
+      })
+      .filter((p) => p.title);
+
+    const links = values.linksText
+      .split(/\n+/)
+      .map((line) => line.trim())
+      .filter(Boolean)
+      .map((line) => {
+        const m = line.match(/^([a-zA-Z]+)\s*:\s*(\S+)(?:\s*\|\s*(.*))?$/);
+        if (!m) return null;
+        const type = m[1].toLowerCase();
+        const url = m[2].trim();
+        const label = m[3]?.trim() || undefined;
+        if (!(LINK_TYPES as readonly string[]).includes(type)) return null;
+        if (!/^https?:\/\//.test(url)) return null;
+        return { type: type as (typeof LINK_TYPES)[number], url, label };
+      })
+      .filter((x): x is NonNullable<typeof x> => x !== null);
+
     onSubmit({
       name: values.name.trim(),
       subName: values.subName.trim() || undefined,
@@ -87,6 +142,12 @@ export function ItemFormModal({
       imageUrl: values.imageUrl.trim() || undefined,
       badge: values.badge.trim() || undefined,
       isPublished: values.isPublished,
+      heroImageUrl: values.heroImageUrl.trim() || undefined,
+      gallery: gallery.length > 0 ? gallery : undefined,
+      videoUrl: values.videoUrl.trim() || undefined,
+      story: values.story.trim() || undefined,
+      storyPoints: storyPoints.length > 0 ? storyPoints : undefined,
+      links: links.length > 0 ? links : undefined,
     });
   };
 
@@ -189,6 +250,84 @@ export function ItemFormModal({
             onChange={(next) => setValues((v) => ({ ...v, isPublished: next }))}
           />
         </div>
+
+        {/* 詳細ページ用のフィールド */}
+        <details className="rounded border border-neutral-200 bg-neutral-50">
+          <summary className="cursor-pointer select-none px-3 py-2 text-xs font-medium text-neutral-800">
+            詳細ページの内容（こだわり・追加写真・動画）
+          </summary>
+          <div className="space-y-4 border-t border-neutral-200 px-3 py-4 sm:px-4 sm:py-5">
+            <Field
+              label="詳細ページの大きな画像URL"
+              hint="任意。未指定なら上の「画像URL」が使われます。"
+            >
+              <Input
+                type="url"
+                value={values.heroImageUrl}
+                onChange={(e) => setValues((v) => ({ ...v, heroImageUrl: e.target.value }))}
+                placeholder="https://example.com/hero.jpg"
+              />
+            </Field>
+
+            <Field
+              label="こだわり（本文）"
+              hint="改行を1行空けると段落になります。料理人の想い・素材・調理法など。"
+            >
+              <Textarea
+                rows={6}
+                value={values.story}
+                onChange={(e) => setValues((v) => ({ ...v, story: e.target.value }))}
+                placeholder={"例：このカルボナーラは…\n\n卵黄は…"}
+                maxLength={2000}
+              />
+            </Field>
+
+            <Field
+              label="こだわり3点（箇条書き）"
+              hint="1行1点。「タイトル | 本文」の形式で書いてください。"
+            >
+              <Textarea
+                rows={4}
+                value={values.storyPointsText}
+                onChange={(e) => setValues((v) => ({ ...v, storyPointsText: e.target.value }))}
+                placeholder={"素材へのこだわり | 北海道産の…\n伝統の製法 | 1880年から…\nシェフの一言 | 香りを楽しんで…"}
+              />
+            </Field>
+
+            <Field label="追加写真URL（複数）" hint="1行1URL。最大10枚程度を推奨。">
+              <Textarea
+                rows={4}
+                value={values.galleryText}
+                onChange={(e) => setValues((v) => ({ ...v, galleryText: e.target.value }))}
+                placeholder={"https://example.com/1.jpg\nhttps://example.com/2.jpg"}
+              />
+            </Field>
+
+            <Field
+              label="動画URL"
+              hint="任意。YouTube/Vimeo の埋め込みURL、または mp4 の直URL。"
+            >
+              <Input
+                type="url"
+                value={values.videoUrl}
+                onChange={(e) => setValues((v) => ({ ...v, videoUrl: e.target.value }))}
+                placeholder="https://www.youtube.com/embed/xxxx"
+              />
+            </Field>
+
+            <Field
+              label="SNS・外部リンク（複数）"
+              hint={`1行1リンク。形式: 「種類: URL | ラベル」。種類: ${LINK_TYPES.join(" / ")}`}
+            >
+              <Textarea
+                rows={4}
+                value={values.linksText}
+                onChange={(e) => setValues((v) => ({ ...v, linksText: e.target.value }))}
+                placeholder={"instagram: https://instagram.com/p/xxxx | 制作風景\nnote: https://note.com/xxxx/n/xxxx | シェフの記事\nyoutube: https://youtu.be/xxxx"}
+              />
+            </Field>
+          </div>
+        </details>
       </form>
     </Modal>
   );

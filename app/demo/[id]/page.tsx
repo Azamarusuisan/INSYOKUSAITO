@@ -32,7 +32,7 @@ export default function DemoDetailPage({
     <div className={`flex flex-1 flex-col ${theme.pageBg} ${theme.pageText} ${theme.fontFamily}`}>
       <DemoSwitcher currentId={id} />
 
-      <header className={`border-b border-neutral-200/40 ${theme.headerBg}`}>
+      <header className={`border-b border-neutral-200/40 safe-x ${theme.headerBg}`}>
         <div className="mx-auto max-w-5xl px-4 py-6 text-center sm:px-6 sm:py-10">
           <p className={`text-[11px] tracking-[0.4em] uppercase ${theme.headerAccent}`}>
             {shop.info.name}
@@ -50,10 +50,10 @@ export default function DemoDetailPage({
       </header>
 
       <main className="flex-1">
-        <MenuView shop={shop} theme={theme} />
+        <MenuView shop={shop} theme={theme} demoId={id} />
       </main>
 
-      <footer className={`border-t border-neutral-200/30 px-4 py-5 text-center text-[10px] tracking-[0.2em] uppercase sm:text-[11px] ${theme.footerNote}`}>
+      <footer className={`border-t border-neutral-200/30 px-4 py-5 text-center text-[10px] tracking-[0.2em] uppercase safe-x safe-bottom sm:text-[11px] ${theme.footerNote}`}>
         {shop.info.name}
       </footer>
     </div>
