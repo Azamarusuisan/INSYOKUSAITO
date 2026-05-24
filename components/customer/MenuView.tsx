@@ -87,7 +87,7 @@ function Card({
       href={`/demo/${demoId}/item/${item.id}`}
       className={`${theme.cardWrap} group min-h-[88px] cursor-pointer touch-manipulation transition-all hover:opacity-90 active:scale-[0.99] active:opacity-80`}
     >
-      {theme.layout !== "list" && <ImageSlot src={item.imageUrl} ph={theme.cardImagePh} />}
+      {theme.layout !== "list" && <ImageSlot src={item.imageUrl ?? item.heroImageUrl} ph={theme.cardImagePh} />}
       <div className="flex flex-1 flex-col">
         <div className="flex items-start justify-between gap-2 sm:gap-3">
           <div className="min-w-0">

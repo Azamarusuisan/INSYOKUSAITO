@@ -47,13 +47,33 @@ export default function ItemDetailPage({
   const hero = item.heroImageUrl ?? item.imageUrl;
   const gallery = item.gallery ?? [];
   const paragraphs = (item.story ?? "").split(/\n\s*\n/).filter(Boolean);
+  const hasBg = !!theme.bgImage;
 
   return (
-    <div className={`flex flex-1 flex-col ${theme.pageBg} ${theme.pageText} ${theme.fontFamily}`}>
+    <div className={`relative flex flex-1 flex-col ${theme.pageBg} ${theme.pageText} ${theme.fontFamily}`}>
+      {hasBg && (
+        <>
+          <div
+            aria-hidden
+            className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${theme.bgImage})` }}
+          />
+          <div
+            aria-hidden
+            className="fixed inset-0 -z-10"
+            style={{
+              background:
+                theme.bgOverlay ??
+                "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8))",
+            }}
+          />
+        </>
+      )}
+
       <DemoSwitcher currentId={id} />
 
       {/* パンくず + 戻る */}
-      <div className={`${theme.headerBg} border-b border-neutral-200/30 safe-x`}>
+      <div className={`border-b border-white/10 safe-x ${hasBg ? "bg-black/30 backdrop-blur" : theme.headerBg}`}>
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-2 sm:px-6 sm:py-3">
           <Link
             href={`/demo/${id}`}
@@ -114,10 +134,7 @@ export default function ItemDetailPage({
             </div>
             <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
               {item.storyPoints.map((p, i) => (
-                <div
-                  key={i}
-                  className={`rounded-md border border-neutral-200/30 bg-white/40 p-4 ${theme.pageText}`}
-                >
+                <div key={i} className={`${theme.cardWrap} flex-col items-start`}>
                   <p className={`text-[11px] tracking-[0.2em] uppercase ${theme.headerAccent}`}>
                     No. {String(i + 1).padStart(2, "0")}
                   </p>
@@ -223,24 +240,26 @@ export default function ItemDetailPage({
 
         {/* なにも詳細情報が無いときの案内 */}
         {!item.story && !item.storyPoints?.length && gallery.length === 0 && !item.videoUrl && !item.links?.length && (
-          <div className="rounded-md border border-dashed border-neutral-300/60 bg-white/40 p-6 text-center text-sm text-neutral-500">
-            この商品の詳細（こだわり・写真）はまだ登録されていません。
-            <br />
-            管理画面 → メニュー編集 → この商品の「編集」から登録できます。
+          <div className={`${theme.cardWrap} flex-col items-center text-center`}>
+            <p className={`text-sm ${theme.cardDesc}`}>
+              この商品の詳細（こだわり・写真）はまだ登録されていません。
+              <br />
+              管理画面 → メニュー編集 → この商品の「編集」から登録できます。
+            </p>
           </div>
         )}
 
         <div className="mt-12 text-center">
           <Link
             href={`/demo/${id}`}
-            className="inline-flex h-11 items-center justify-center rounded border border-current px-5 text-sm font-medium hover:opacity-70"
+            className="inline-flex h-12 items-center justify-center rounded border border-current px-6 text-sm font-medium hover:opacity-70 active:opacity-50"
           >
             ← メニュー一覧に戻る
           </Link>
         </div>
       </main>
 
-      <footer className={`border-t border-neutral-200/30 px-4 py-5 text-center text-[10px] tracking-[0.2em] uppercase safe-x safe-bottom sm:text-[11px] ${theme.footerNote}`}>
+      <footer className={`border-t border-white/10 px-4 py-5 text-center text-[10px] tracking-[0.2em] uppercase safe-x safe-bottom sm:text-[11px] ${theme.footerNote}`}>
         {shop.info.name}
       </footer>
     </div>

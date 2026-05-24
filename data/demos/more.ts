@@ -445,8 +445,8 @@ export const gelatoDemo: DemoDefinition = {
     type: "restaurant",
     info: { name: "Gelateria Sora", nameJa: "ジェラテリア そら", tagline: "今日のフレーバー、何にする？" },
     categories: cats([
-      { id: "milk", name: "ミルク系", subName: "Milk", items: items([
-        { id: "milk", name: "北海道ミルク", price: 480, badge: "定番", heroImageUrl: hero("gelato-milk"),
+      { id: "cat-milk", name: "ミルク系", subName: "Milk", items: items([
+        { id: "milk-hokkaido", name: "北海道ミルク", price: 480, badge: "定番", heroImageUrl: hero("gelato-milk"),
           story: "北海道の契約牧場から、低温殺菌のノンホモ生乳。\n\nミルク本来の甘さを最大限に引き出すため、砂糖はぎりぎりまで控えています。" },
           { id: "pistachio", name: "シチリア産ピスタチオ", price: 680, badge: "人気" },
         { id: "tiramisu", name: "ティラミス", price: 580 },

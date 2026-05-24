@@ -50,31 +50,33 @@ export function DemoSwitcher({ currentId }: { currentId: string }) {
 
       {open && (
         <div className="border-t border-neutral-800 bg-neutral-950">
-          <div className="mx-auto flex max-w-6xl flex-wrap gap-1.5 px-3 py-2.5 sm:px-4 sm:py-3">
-            {DEMOS.map((d) => {
-              const active = d.id === currentId;
-              return (
-                <Link
-                  key={d.id}
-                  href={`/demo/${d.id}`}
-                  className={cx(
-                    "inline-flex min-h-9 items-center rounded-full border px-3 py-1.5 text-[12px] tracking-wider transition-colors active:scale-[0.98] sm:text-[11px]",
-                    active
-                      ? "border-white bg-white text-neutral-900"
-                      : "border-neutral-700 text-neutral-200 hover:border-neutral-400 hover:text-white",
-                  )}
-                >
-                  <span className="font-medium">{d.industryLabel}</span>
-                  <span className="ml-1.5 hidden text-[10px] opacity-70 sm:inline">
-                    {d.initial.info.nameJa}
-                  </span>
-                </Link>
-              );
-            })}
+          <div className="mx-auto max-h-[55vh] max-w-6xl overflow-y-auto px-3 py-2.5 sm:max-h-[60vh] sm:px-4 sm:py-3">
+            <div className="flex flex-wrap gap-1.5">
+              {DEMOS.map((d) => {
+                const active = d.id === currentId;
+                return (
+                  <Link
+                    key={d.id}
+                    href={`/demo/${d.id}`}
+                    className={cx(
+                      "inline-flex min-h-11 items-center rounded-full border px-3.5 py-1.5 text-[12px] tracking-wider transition-colors active:scale-[0.98] sm:min-h-9 sm:text-[11px]",
+                      active
+                        ? "border-white bg-white text-neutral-900"
+                        : "border-neutral-700 text-neutral-200 hover:border-neutral-400 hover:text-white",
+                    )}
+                  >
+                    <span className="font-medium">{d.industryLabel}</span>
+                    <span className="ml-1.5 hidden text-[10px] opacity-70 sm:inline">
+                      {d.initial.info.nameJa}
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+            <p className="mt-3 text-[10px] tracking-wider text-neutral-500 sm:hidden">
+              全{DEMOS.length}デザイン — タップで切り替わります
+            </p>
           </div>
-          <p className="px-3 pb-3 text-[10px] tracking-wider text-neutral-500 sm:hidden">
-            タップでそのデザインに切り替わります
-          </p>
         </div>
       )}
     </div>

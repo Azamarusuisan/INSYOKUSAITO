@@ -58,7 +58,7 @@ export default function DemoDetailPage({
           <p className={`text-[11px] tracking-[0.4em] uppercase ${theme.headerAccent}`}>
             {shop.info.name}
           </p>
-          <h1 className={`mt-3 ${hasBg ? "text-4xl sm:text-6xl" : "text-3xl sm:text-4xl"} tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] ${theme.fontFamily} ${theme.headerText}`}>
+          <h1 className={`mt-3 tracking-wide ${theme.fontFamily} ${theme.headerText} ${hasBg ? "text-4xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] sm:text-6xl" : "text-3xl sm:text-4xl"}`}>
             {shop.info.nameJa}
           </h1>
           {shop.info.tagline && (
