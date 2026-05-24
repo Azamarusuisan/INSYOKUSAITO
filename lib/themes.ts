@@ -43,48 +43,58 @@ export type Theme = {
   // 全体フォント（layout で適用）
   fontFamily: string; // serif/sans 切替
   layout: LayoutVariant;
+  // 背景画像オーバーレイ・モード（任意）
+  bgImage?: string; // フルブリードの背景画像URL
+  bgOverlay?: string; // CSSグラデーション。デフォルトは暗めの黒オーバーレイ
 };
 
 export const THEMES: Record<ThemeId, Theme> = {
   italian: {
     id: "italian",
-    pageBg: "bg-[#f7f1e6]",
-    pageText: "text-stone-900",
-    headerBg: "bg-[#f7f1e6]",
-    headerText: "text-stone-900",
-    headerAccent: "text-amber-900/80",
-    catHeading: "font-serif text-2xl text-stone-900 sm:text-3xl",
-    catSub: "text-[11px] tracking-[0.3em] text-amber-900/70 uppercase",
-    catRule: "border-amber-900/25",
+    pageBg: "bg-black",
+    pageText: "text-stone-50",
+    headerBg: "bg-transparent",
+    headerText: "text-stone-50",
+    headerAccent: "text-amber-200",
+    catHeading: "font-serif text-3xl tracking-wider text-stone-50 sm:text-4xl",
+    catSub: "text-[11px] tracking-[0.4em] text-amber-200 uppercase",
+    catRule: "border-amber-200/40",
     cardWrap:
-      "flex gap-3 rounded-md border border-amber-900/10 bg-white p-3 shadow-[0_1px_0_rgba(120,80,30,0.04)] sm:gap-4 sm:p-4",
-    cardName: "font-serif text-sm text-stone-900 sm:text-base",
-    cardSub: "text-[10px] tracking-wider text-amber-900/70 sm:text-[11px]",
-    cardDesc: "text-[11px] leading-relaxed text-stone-600 sm:text-xs",
-    cardPrice: "font-serif text-sm text-stone-900 sm:text-base",
+      "flex gap-3 rounded-md border border-white/15 bg-black/45 p-3 backdrop-blur-md sm:gap-4 sm:p-4",
+    cardName: "font-serif text-sm text-stone-50 sm:text-base",
+    cardSub: "text-[10px] tracking-wider text-amber-200/80 sm:text-[11px]",
+    cardDesc: "text-[11px] leading-relaxed text-stone-300 sm:text-xs",
+    cardPrice: "font-serif text-sm text-amber-100 sm:text-base",
     cardBadge:
-      "rounded-full border border-amber-900/30 px-2 py-0.5 text-[10px] tracking-wider text-amber-900",
-    cardImagePh:
-      "bg-stone-100 text-[10px] tracking-[0.2em] text-stone-400",
+      "rounded-full border border-amber-200/60 px-2 py-0.5 text-[10px] tracking-wider text-amber-100",
+    cardImagePh: "bg-white/10 text-[10px] tracking-[0.2em] text-white/50",
     sectionGap: "space-y-12 sm:space-y-16",
     grid: "grid gap-4 sm:grid-cols-2 sm:gap-5",
-    footerNote: "text-stone-500",
+    footerNote: "text-stone-400",
     fontFamily: "font-serif",
     layout: "card",
+    bgImage:
+      "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=2000&q=80",
+    bgOverlay:
+      "linear-gradient(rgba(15,12,8,0.72), rgba(15,12,8,0.85))",
   },
   izakaya: {
     id: "izakaya",
-    pageBg: "bg-[#0f0f10]",
+    pageBg: "bg-black",
     pageText: "text-stone-100",
-    headerBg: "bg-[#0f0f10]",
+    headerBg: "bg-transparent",
     headerText: "text-stone-100",
-    headerAccent: "text-red-400/80",
+    headerAccent: "text-red-300",
+    bgImage:
+      "https://images.unsplash.com/photo-1554502078-ef0fc409efce?w=2000&q=80",
+    bgOverlay:
+      "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85))",
     catHeading:
       "font-serif text-2xl tracking-widest text-stone-100 sm:text-3xl",
     catSub: "text-[11px] tracking-[0.4em] text-red-400/80",
     catRule: "border-stone-700",
     cardWrap:
-      "flex gap-3 border-b border-stone-800 bg-transparent px-1 py-3 sm:gap-4 sm:py-4",
+      "flex gap-3 border-b border-white/15 bg-transparent px-1 py-3 sm:gap-4 sm:py-4",
     cardName: "text-sm text-stone-100 sm:text-base",
     cardSub: "text-[10px] tracking-wider text-stone-400 sm:text-[11px]",
     cardDesc: "text-[11px] leading-relaxed text-stone-400 sm:text-xs",
@@ -126,17 +136,21 @@ export const THEMES: Record<ThemeId, Theme> = {
   },
   yakiniku: {
     id: "yakiniku",
-    pageBg: "bg-[#111111]",
+    pageBg: "bg-black",
     pageText: "text-amber-50",
-    headerBg: "bg-[#111111]",
+    headerBg: "bg-transparent",
     headerText: "text-amber-50",
-    headerAccent: "text-amber-400",
+    headerAccent: "text-amber-300",
+    bgImage:
+      "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=2000&q=80",
+    bgOverlay:
+      "linear-gradient(rgba(8,4,2,0.7), rgba(20,8,4,0.88))",
     catHeading:
       "text-2xl font-bold tracking-wider text-amber-50 sm:text-3xl",
     catSub: "text-[11px] tracking-[0.4em] text-amber-400 uppercase",
     catRule: "border-amber-900/40",
     cardWrap:
-      "flex gap-3 rounded border border-amber-900/30 bg-stone-900 p-3 sm:gap-4 sm:p-4",
+      "flex gap-3 rounded border border-amber-200/25 bg-black/50 p-3 backdrop-blur-md sm:gap-4 sm:p-4",
     cardName: "text-sm font-semibold text-amber-50 sm:text-base",
     cardSub: "text-[10px] tracking-wider text-amber-200/70 sm:text-[11px]",
     cardDesc: "text-[11px] leading-relaxed text-stone-400 sm:text-xs",

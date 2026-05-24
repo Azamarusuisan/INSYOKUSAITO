@@ -28,24 +28,45 @@ export default function DemoDetailPage({
     );
   }
 
+  const hasBg = !!theme.bgImage;
+
   return (
-    <div className={`flex flex-1 flex-col ${theme.pageBg} ${theme.pageText} ${theme.fontFamily}`}>
+    <div className={`relative flex flex-1 flex-col ${theme.pageBg} ${theme.pageText} ${theme.fontFamily}`}>
+      {hasBg && (
+        <>
+          <div
+            aria-hidden
+            className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${theme.bgImage})` }}
+          />
+          <div
+            aria-hidden
+            className="fixed inset-0 -z-10"
+            style={{
+              background:
+                theme.bgOverlay ??
+                "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8))",
+            }}
+          />
+        </>
+      )}
+
       <DemoSwitcher currentId={id} />
 
-      <header className={`border-b border-neutral-200/40 safe-x ${theme.headerBg}`}>
-        <div className="mx-auto max-w-5xl px-4 py-6 text-center sm:px-6 sm:py-10">
+      <header className={`safe-x ${hasBg ? "" : `border-b border-neutral-200/40 ${theme.headerBg}`}`}>
+        <div className={`mx-auto max-w-5xl px-4 text-center sm:px-6 ${hasBg ? "py-14 sm:py-24" : "py-6 sm:py-10"}`}>
           <p className={`text-[11px] tracking-[0.4em] uppercase ${theme.headerAccent}`}>
             {shop.info.name}
           </p>
-          <h1 className={`mt-2 text-3xl sm:text-4xl ${theme.fontFamily} ${theme.headerText}`}>
+          <h1 className={`mt-3 ${hasBg ? "text-4xl sm:text-6xl" : "text-3xl sm:text-4xl"} tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] ${theme.fontFamily} ${theme.headerText}`}>
             {shop.info.nameJa}
           </h1>
           {shop.info.tagline && (
-            <p className={`mt-3 text-xs sm:text-sm ${theme.headerText} opacity-80`}>
+            <p className={`mt-4 text-xs sm:text-sm ${theme.headerText} opacity-90`}>
               {shop.info.tagline}
             </p>
           )}
-          <div className={`mx-auto mt-5 h-px w-16 ${theme.catRule.replace("border-", "bg-")}`} />
+          <div className={`mx-auto mt-6 h-px w-16 ${theme.catRule.replace("border-", "bg-")}`} />
         </div>
       </header>
 
@@ -53,7 +74,7 @@ export default function DemoDetailPage({
         <MenuView shop={shop} theme={theme} demoId={id} />
       </main>
 
-      <footer className={`border-t border-neutral-200/30 px-4 py-5 text-center text-[10px] tracking-[0.2em] uppercase safe-x safe-bottom sm:text-[11px] ${theme.footerNote}`}>
+      <footer className={`border-t border-white/15 px-4 py-5 text-center text-[10px] tracking-[0.2em] uppercase safe-x safe-bottom sm:text-[11px] ${theme.footerNote}`}>
         {shop.info.name}
       </footer>
     </div>
